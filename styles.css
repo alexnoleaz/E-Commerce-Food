@@ -112,7 +112,7 @@ body {
 
 .header .form-search {
   position: absolute;
-  top: 10%;
+  top: 12%;
   right: -110%;
   width: 20rem;
   height: 2rem;
@@ -193,7 +193,7 @@ body {
   }
 
   .header .form-search{
-    top:8.57%;
+    top:10%;
   }
 }
 
@@ -210,7 +210,7 @@ body {
   }
 
   .header .form-search{
-    top: 7.3%;
+    top: 8.3%;
     width: 13rem;
     height: 1.7rem;
   }
@@ -247,7 +247,7 @@ body {
   }
 
   .header .form-search{
-    top: 6.65%;
+    top: 7.55%;
     width: 12rem;
     height: 1.4rem;
   }
