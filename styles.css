@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 
 :root {
-  --color-logo: #f5c055;
+  --green: #007f35;
+  --orange: #efb43d;
   --black: #130f40;
   --light-color: #666;
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
@@ -42,17 +43,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
-  padding: 5px 10% 5px 5%;
+  height: 3.5rem;
+  padding: 5px 5%;
 }
 
 .header .logo {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bolder;
-  color: var(--black);
+  color: var(--green);
   height: 2.5rem;
   width: auto;
-  display: inline-block;
+  text-transform: uppercase;
 }
 
 .header .logo:hover {
@@ -60,14 +61,14 @@ body {
 }
 
 .header .logo i {
-  font-size: 1.2rem;
-  color: var(--color-logo);
+  font-size: 1.5rem;
+  color: var(--orange);
 }
 
 .header .navbar li {
   font-weight: bolder;
   display: inline-block;
-  margin: 0 20px;
+  margin: 0 0.8rem;
 }
 
 .header .navbar li:hover {
@@ -76,12 +77,13 @@ body {
 
 .header .navbar a {
   text-transform: uppercase;
-  font-size: 1rem;
-  color: var(--black);
+  font-size: 0.8rem;
+  height: 2.5rem;
+  color: var(--green);
 }
 
 .header .navbar a:hover {
-  color: var(--color-logo);
+  color: var(--orange);
 }
 
 .header .icons li {
@@ -94,22 +96,23 @@ body {
 }
 
 .header .icons a {
-  font-size: 1.2rem;
-  padding: 10px 15px;
+  font-size: 1rem;
+  height: 2rem;
+  padding: 10px 10px;
   cursor: pointer;
   border-radius: 5px;
-  color: var(--black);
+  color: var(--green);
   background-color: #eee;
   transition: all 0.2s ease 0s;
 }
 
 .header .icons a:hover {
-  background-color: var(--color-logo);
+  background-color: var(--orange);
 }
 
 .header .form-search {
   position: absolute;
-  top: 12%;
+  top: 10%;
   right: -110%;
   width: 20rem;
   height: 2rem;
@@ -136,14 +139,14 @@ body {
 }
 
 .header .form-search label {
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-right: 0.8rem;
   cursor: pointer;
-  color: var(--black);
+  color: var(--green);
 }
 
 .header .form-search label:hover {
-  color: var(--color-logo);
+  color: var(--orange);
 }
 
 
@@ -154,5 +157,129 @@ body {
 
 
 /* media queries*/
+@media (max-width:1140px){
+  .header .logo{
+    font-size: 1.2rem;
+    height: 2.3rem;
+    margin-top: 0.5rem;
+  }
 
+  .header .logo i{
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width:948px){
+  .header{
+    height: 3rem;
+    padding: 2.5px 5%;
+  }
+
+  #btn-bars{
+    display: inline-block;
+  }
+
+  .header .logo{
+    font-size: 1rem;
+    height: 2rem;
+  }
+
+  .header .logo i{
+    font-size: 1rem;
+  }
+
+  .header .navbar li{
+    display: none;
+  }
+
+  .header .form-search{
+    top:8.57%;
+  }
+}
+
+@media (max-width:681px){
+  .header{
+    height: 2.5rem;
+    padding: 2px 4%;
+  }
+
+  .header .icons a{
+    font-size: 1rem;
+    height: 1.65rem;
+    padding: 7px 10px;
+  }
+
+  .header .form-search{
+    top: 7.3%;
+    width: 13rem;
+    height: 1.7rem;
+  }
+
+  .header .form-search input{
+    padding: 0 0.5rem;
+  }
+
+  .header .form-search label{
+    font-size: 0.8rem;
+    padding-right: 0.55rem;
+  }
+}
+
+@media (max-width:416px){
+  .header{
+    height: 2.3rem;
+    padding: 1px 3%;
+  }
+
+  .header .logo{
+    margin-top: 0;
+    font-size: 0.8rem;
+    height: 1.3rem;
+  }
+
+  .header .logo i{
+    font-size: 0.7rem;
+  }
+
+  .header .icons a{
+    font-size: 0.8rem;
+    height: 1.45rem;
+  }
+
+  .header .form-search{
+    top: 6.65%;
+    width: 12rem;
+    height: 1.4rem;
+  }
+
+  .header .form-search input{
+    padding: 0 0.45rem;
+  }
+
+  .header .form-search label{
+    font-size: 0.65rem;
+    padding-right: 0.55rem;
+  }
+}
+
+@media (max-width:336px){
+  .header .logo{
+    margin-top: 3px;
+    font-size: 0.65rem;
+  }
+
+  .header .logo i{
+    font-size: 0.53rem;
+  }
+
+  .header .icons a{
+    font-size: 0.7rem;
+    height: 1.4rem;
+  }
+
+  .header .form-search{
+    width: 11rem;
+    height: 1.25rem;
+  }
+}
 
