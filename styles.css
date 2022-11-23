@@ -66,8 +66,8 @@ body {
 }
 
 .header .navbar li {
-  font-weight: bolder;
   display: inline-block;
+  font-weight: bolder;
   margin: 0 0.8rem;
 }
 
@@ -121,11 +121,10 @@ body {
   box-shadow: var(--box-shadow);
   display: flex;
   align-items: center;
-  transition: all 0.5s ease-in;
 }
 
 .header .form-search.active {
-  transition: all 0.2s ease-out;
+  transition: all 0.4s ease-out;
   right: 2%;
 }
 
@@ -149,137 +148,182 @@ body {
   color: var(--orange);
 }
 
-
-
-
-
-
-
-
 /* media queries*/
-@media (max-width:1140px){
-  .header .logo{
+@media (max-width: 1140px) {
+  .header .logo {
     font-size: 1.2rem;
     height: 2.3rem;
     margin-top: 0.5rem;
   }
 
-  .header .logo i{
+  .header .logo i {
     font-size: 1.2rem;
   }
 }
 
-@media (max-width:948px){
-  .header{
+@media (max-width: 948px) {
+  .header {
     height: 3rem;
     padding: 2.5px 5%;
   }
 
-  #btn-bars{
+  #btn-bars {
     display: inline-block;
   }
 
-  .header .logo{
+  .header .logo {
     font-size: 1rem;
     height: 2rem;
   }
 
-  .header .logo i{
+  .header .logo i {
     font-size: 1rem;
   }
 
-  .header .navbar li{
-    display: none;
+  .header .navbar {
+    position: absolute;
+    top: 10%;
+    right: -110%;
+    width: 12rem;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px 5%;
   }
 
-  .header .form-search{
-    top:10%;
+  .header .navbar.active {
+    right: 2%;
+    transition: all 0.4s ease-out;
+  }
+
+  .header .navbar li {
+    display: block;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+
+  .header .navbar li:hover {
+    background-color: var(--orange);
+    cursor: pointer;
+    transform: none;
+  }
+
+  .header .navbar a {
+    padding: 0 0.5rem;
+  }
+
+  .header .navbar a:hover {
+    color: var(--green);
+  }
+
+  .header .form-search {
+    top: 10%;
   }
 }
 
-@media (max-width:681px){
-  .header{
+@media (max-width: 681px) {
+  .header {
     height: 2.5rem;
     padding: 2px 4%;
   }
 
-  .header .icons a{
+  .header .navbar{
+    top:8.3%;
+  }
+
+  .header .navbar a{
+    font-size: 0.7rem;
+  }
+
+  .header .icons a {
     font-size: 1rem;
     height: 1.65rem;
     padding: 7px 10px;
   }
 
-  .header .form-search{
+  .header .form-search {
     top: 8.3%;
     width: 13rem;
     height: 1.7rem;
   }
 
-  .header .form-search input{
+  .header .form-search input {
     padding: 0 0.5rem;
   }
 
-  .header .form-search label{
+  .header .form-search label {
     font-size: 0.8rem;
     padding-right: 0.55rem;
   }
 }
 
-@media (max-width:416px){
-  .header{
+@media (max-width: 416px) {
+  .header {
     height: 2.3rem;
     padding: 1px 3%;
   }
 
-  .header .logo{
+  .header .logo {
     margin-top: 0;
     font-size: 0.8rem;
     height: 1.3rem;
   }
 
-  .header .logo i{
+  .header .logo i {
     font-size: 0.7rem;
   }
 
-  .header .icons a{
+  .header .navbar{
+    width: 10rem;
+    top:7.55%;
+  }
+
+  .header .navbar a{
+    font-size: 0.6rem;
+  }
+
+  .header .icons a {
     font-size: 0.8rem;
     height: 1.45rem;
   }
 
-  .header .form-search{
+  .header .form-search {
     top: 7.55%;
     width: 12rem;
     height: 1.4rem;
   }
 
-  .header .form-search input{
+  .header .form-search input {
     padding: 0 0.45rem;
   }
 
-  .header .form-search label{
+  .header .form-search label {
     font-size: 0.65rem;
     padding-right: 0.55rem;
   }
 }
 
-@media (max-width:336px){
-  .header .logo{
+@media (max-width: 336px) {
+  .header .logo {
     margin-top: 3px;
     font-size: 0.65rem;
   }
 
-  .header .logo i{
+  .header .logo i {
     font-size: 0.53rem;
   }
 
-  .header .icons a{
+  .header .navbar{
+    width: 8rem;
+  }
+
+  .header .icons a {
     font-size: 0.7rem;
     height: 1.4rem;
   }
 
-  .header .form-search{
+  .header .form-search {
     width: 11rem;
     height: 1.25rem;
   }
 }
-
