@@ -183,7 +183,7 @@ body {
 
   .header .navbar {
     position: absolute;
-    top: 10%;
+    top: 12%;
     right: -110%;
     width: 12rem;
     box-shadow: var(--box-shadow);
