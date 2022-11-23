@@ -27,6 +27,7 @@
 html {
   font-size: 20px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -125,7 +126,7 @@ body {
 
 .header .form-search.active {
   transition: all 0.4s ease-out;
-  right: 2%;
+  right: 5%;
 }
 
 .header .form-search input {
@@ -192,7 +193,7 @@ body {
   }
 
   .header .navbar.active {
-    right: 2%;
+    right: 5%;
     transition: all 0.4s ease-out;
   }
 
@@ -228,7 +229,8 @@ body {
   }
 
   .header .navbar{
-    top:8.3%;
+    width: 90%;
+    text-align: center;
   }
 
   .header .navbar a{
@@ -242,8 +244,7 @@ body {
   }
 
   .header .form-search {
-    top: 8.3%;
-    width: 13rem;
+    width: 90%;
     height: 1.7rem;
   }
 
@@ -274,8 +275,7 @@ body {
   }
 
   .header .navbar{
-    width: 10rem;
-    top:7.55%;
+    width: 90%;
   }
 
   .header .navbar a{
@@ -288,8 +288,6 @@ body {
   }
 
   .header .form-search {
-    top: 7.55%;
-    width: 12rem;
     height: 1.4rem;
   }
 
@@ -314,7 +312,7 @@ body {
   }
 
   .header .navbar{
-    width: 8rem;
+    width: 90%;
   }
 
   .header .icons a {
@@ -323,7 +321,6 @@ body {
   }
 
   .header .form-search {
-    width: 11rem;
     height: 1.25rem;
   }
 }
