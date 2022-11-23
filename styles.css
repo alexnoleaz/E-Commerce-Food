@@ -3,7 +3,7 @@
 :root {
   --green: #007f35;
   --orange: #efb43d;
-  --black: #130f40;
+  --black: #0f0d2e;
   --light-color: #666;
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   --border: 2rem solid rgba(0, 0, 0, 0.1);
@@ -21,112 +21,94 @@
   text-decoration: none;
   list-style: none;
   text-transform: capitalize;
-  transition: all 0.2s linear;
+  transition: all 0.4s linear;
 }
 
 html {
-  font-size: 20px;
+  font-size: 10px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
 }
 
 body {
   background-color: #eee;
 }
 
-#btn-bars {
-  display: none;
-}
-
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
   background-color: #fff;
   box-shadow: var(--box-shadow);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 3.5rem;
-  padding: 5px 5%;
 }
 
-.header .logo {
-  font-size: 1.5rem;
+.logo {
+  font-size: 2.5rem;
   font-weight: bolder;
   color: var(--green);
-  height: 2.5rem;
-  width: auto;
-  text-transform: uppercase;
-}
-
-.header .logo:hover {
-  transform: scale(1.05);
 }
 
 .header .logo i {
-  font-size: 1.5rem;
   color: var(--orange);
 }
 
-.header .navbar li {
-  display: inline-block;
-  font-weight: bolder;
-  margin: 0 0.8rem;
-}
-
-.header .navbar li:hover {
-  transform: scale(1.1);
-}
-
 .header .navbar a {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  height: 2.5rem;
+  font-size: 1.7rem;
+  margin: 0 1rem;
   color: var(--green);
+  transition: all 0.2s linear;
 }
 
 .header .navbar a:hover {
   color: var(--orange);
 }
 
-.header .icons li {
-  font-weight: bolder;
-  display: inline-block;
-}
-
-.header .icons li:hover {
-  transform: scale(1.1);
-}
-
-.header .icons a {
-  font-size: 1rem;
-  height: 2rem;
-  padding: 10px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  color: var(--green);
+.header .icons div {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  border-radius: 0.5rem;
   background-color: #eee;
-  transition: all 0.2s ease 0s;
+  color: var(--green);
+  font-size: 2rem;
+  margin-right: 0.3rem;
+  text-align: center;
+  cursor: pointer;
 }
 
-.header .icons a:hover {
+.header .icons div:hover {
   background-color: var(--orange);
+  color: #fff;
+}
+
+#btn-bars {
+  display: none;
 }
 
 .header .form-search {
   position: absolute;
-  top: 12%;
-  right: -110%;
-  width: 20rem;
-  height: 2rem;
+  top: 110%;
+  right: -100%;
+  width: 50rem;
+  height: 5rem;
   background-color: #fff;
-  border-radius: 5px;
-  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  overflow: hidden;
   display: flex;
   align-items: center;
+  box-shadow: var(--box-shadow);
 }
 
 .header .form-search.active {
-  transition: all 0.4s ease-out;
-  right: 5%;
+  right: 2rem;
+  transition: 0.4s ease-out;
 }
 
 .header .form-search input {
@@ -134,193 +116,69 @@ body {
   width: 100%;
   background: none;
   text-transform: none;
-  padding: 0 1rem;
+  font-size: 1.6rem;
   color: var(--black);
+  padding: 0 1.5rem;
 }
 
 .header .form-search label {
-  font-size: 1rem;
-  padding-right: 0.8rem;
-  cursor: pointer;
+  font-size: 2.2rem;
+  padding-right: 1.5rem;
   color: var(--green);
+  cursor: pointer;
 }
 
 .header .form-search label:hover {
   color: var(--orange);
 }
 
-/* media queries*/
-@media (max-width: 1140px) {
-  .header .logo {
-    font-size: 1.2rem;
-    height: 2.3rem;
-    margin-top: 0.5rem;
+/* media queries */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 8.8px;
   }
 
-  .header .logo i {
-    font-size: 1.2rem;
+  .header{
+    padding: 2rem;
   }
 }
 
-@media (max-width: 948px) {
-  .header {
-    height: 3rem;
-    padding: 2.5px 5%;
-  }
-
-  #btn-bars {
+@media(max-width:768px){
+  #btn-bars{
     display: inline-block;
   }
 
-  .header .logo {
-    font-size: 1rem;
-    height: 2rem;
-  }
-
-  .header .logo i {
-    font-size: 1rem;
-  }
-
-  .header .navbar {
-    position: absolute;
-    top: 12%;
-    right: -110%;
-    width: 12rem;
-    box-shadow: var(--box-shadow);
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 5px 5%;
-  }
-
-  .header .navbar.active {
-    right: 5%;
-    transition: all 0.4s ease-out;
-  }
-
-  .header .navbar li {
-    display: block;
-    border-radius: 5px;
-    margin: 5px 0;
-  }
-
-  .header .navbar li:hover {
-    background-color: var(--orange);
-    cursor: pointer;
-    transform: none;
-  }
-
-  .header .navbar a {
-    padding: 0 0.5rem;
-  }
-
-  .header .navbar a:hover {
-    color: var(--green);
-  }
-
-  .header .form-search {
-    top: 10%;
-  }
-}
-
-@media (max-width: 681px) {
-  .header {
-    height: 2.5rem;
-    padding: 2px 4%;
+  .header .form-search{
+    width: 92%;
   }
 
   .header .navbar{
-    width: 90%;
+    position: absolute;
+    top:110%;
+    right: -110%;
+    width: 92%;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background-color: #fff;
+  }
+
+  .header .navbar.active{
+    right: 2rem;
+    transition: .4s ease-out;
     text-align: center;
   }
 
   .header .navbar a{
-    font-size: 0.7rem;
-  }
-
-  .header .icons a {
-    font-size: 1rem;
-    height: 1.65rem;
-    padding: 7px 10px;
-  }
-
-  .header .form-search {
-    width: 90%;
-    height: 1.7rem;
-  }
-
-  .header .form-search input {
-    padding: 0 0.5rem;
-  }
-
-  .header .form-search label {
-    font-size: 0.8rem;
-    padding-right: 0.55rem;
+    font-size: 2rem;
+    margin: 2rem 2.5rem;
+    display: block;
   }
 }
 
-@media (max-width: 416px) {
-  .header {
-    height: 2.3rem;
-    padding: 1px 3%;
-  }
-
-  .header .logo {
-    margin-top: 0;
-    font-size: 0.8rem;
-    height: 1.3rem;
-  }
-
-  .header .logo i {
-    font-size: 0.7rem;
-  }
-
-  .header .navbar{
-    width: 90%;
-  }
-
-  .header .navbar a{
-    font-size: 0.6rem;
-  }
-
-  .header .icons a {
-    font-size: 0.8rem;
-    height: 1.45rem;
-  }
-
-  .header .form-search {
-    height: 1.4rem;
-  }
-
-  .header .form-search input {
-    padding: 0 0.45rem;
-  }
-
-  .header .form-search label {
-    font-size: 0.65rem;
-    padding-right: 0.55rem;
+@media (max-width: 450px) {
+  html {
+    font-size: 8px;
   }
 }
 
-@media (max-width: 336px) {
-  .header .logo {
-    margin-top: 3px;
-    font-size: 0.65rem;
-  }
-
-  .header .logo i {
-    font-size: 0.53rem;
-  }
-
-  .header .navbar{
-    width: 90%;
-  }
-
-  .header .icons a {
-    font-size: 0.7rem;
-    height: 1.4rem;
-  }
-
-  .header .form-search {
-    height: 1.25rem;
-  }
-}
