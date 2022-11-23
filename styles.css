@@ -157,7 +157,7 @@ body {
     position: absolute;
     top:110%;
     right: -110%;
-    width: 92%;
+    width: 30rem;
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
     background-color: #fff;
@@ -166,7 +166,6 @@ body {
   .header .navbar.active{
     right: 2rem;
     transition: .4s ease-out;
-    text-align: center;
   }
 
   .header .navbar a{
