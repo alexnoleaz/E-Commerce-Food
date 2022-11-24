@@ -30,7 +30,7 @@ let swiperBurger = new Swiper(".burger-slider", {
   loop: true,
   spaceBetween: 20,
   autoplay: {
-    delay: 6000,
+    delay: 4500,
     disableOnInteraction: false,
   },
   centeredSlides:true,
@@ -51,7 +51,7 @@ let swiperDrink = new Swiper(".drink-slider", {
   loop: true,
   spaceBetween: 20,
   autoplay: {
-    delay: 6000,
+    delay: 4000,
     disableOnInteraction: false,
   },
   centeredSlides:true,
