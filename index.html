@@ -35,7 +35,7 @@
 
       <div class="icons">
         <div class="fas fa-search" id="btn-search"></div>
-        <div class="fas fa-shopping-cart" id="btn-cart"></div>
+        <div class="fas fa-shopping-cart" id="btn-cart"><span id="quantity">0</span></div>
         <div class="fas fa-bars" id="btn-bars"></div>
       </div>
 
@@ -45,26 +45,8 @@
       </form>
 
       <div class="shopping-cart">
-        <div class="box">
-          <i class="fas fa-trash"></i>
-          <img src="./img/Garbanzo.jpeg" alt="Hamburguesa de carne" />
-          <div class="content">
-            <h3>Garbancita</h3>
-            <span class="price"> S/8.00/- </span>
-            <span class="quantity">cant: 1</span>
-          </div>
-        </div>
-        <div class="box">
-          <i class="fas fa-trash"></i>
-          <img src="./img/BebidaDeNaranja.jpeg" alt="Bebida de naranja" />
-          <div class="content">
-            <h3>Bebida de naranja</h3>
-            <span class="price"> S/2.00/- </span>
-            <span class="quantity">cant: 1</span>
-          </div>
-        </div>
-        <div class="total">total: S/10.00/-</div>
-        <a href="#" class="btn">pagar ahora</a>
+        <h1>Sin productos añadidos</h1>
+        <!-- todo el contenido se va a rellenar con js -->
       </div>
     </header>
 
@@ -72,7 +54,7 @@
       <div class="content">
         <h3>Simplemente <span>Bueno</span></h3>
         <p>Una opción saludable para los amantes de las hamburguesas</p>
-        <a href="#" class="btn">Comprar ahora</a>
+        <a href="#burgers" class="btn">Comprar ahora</a>
       </div>
     </section>
 
@@ -103,47 +85,8 @@
     <section class="burgers" id="burgers">
       <h1 class="heading">Nuestras <span>hamburguesas</span></h1>
       <div class="swiper burger-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide box">
-            <img src="./img/Garbanzo.jpeg" alt="Hamburguesa de garbanzo" />
-            <h3>Garbancita</h3>
-            <div class="price">S/8.00</div>
-            <p>
-              Deliciosa hamburguesa a base de garbanzo, con pan artesanal, tofu
-              derretido, papas al horno y ensalada fresca
-            </p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
-          <div class="swiper-slide box">
-            <img src="./img/Carne.jpeg" alt="Hamburguesa de carne" />
-            <h3>La vaca flaca</h3>
-            <div class="price">S/13.00</div>
-            <p>
-              Deliciosa hamburguesa elaborada con carne de res 95-5, pan
-              artesanal, acompañada con papas al horno y ensalada fresca
-            </p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
-          <div class="swiper-slide box">
-            <img src="./img/Lentejas.jpeg" alt="Hamburguesa de lentejas" />
-            <h3>La lentejona</h3>
-            <div class="price">S/7.00</div>
-            <p>
-              Deliciosa hamburguesa a base lentejas, con pan artesanal, papas al
-              horno e ingredientes bajos en grasa
-            </p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
-          <div class="swiper-slide box">
-            <img src="./img/Pollo.jpeg" alt="Hamburguesa de pollo" />
-            <h3>La chickenlight</h3>
-            <div class="price">S/7.50</div>
-            <p>
-              Deliciosa hamburguesa a base de pulpa de pollo, pan artesanal,
-              papas al horno, guacamole y ensalada fresca
-            </p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
+        <div class="swiper-wrapper" id="burgers-container">
+          <!-- todo el contenido se va a rellenar con js -->
         </div>
       </div>
     </section>
@@ -151,52 +94,8 @@
     <section class="drinks" id="drinks">
       <h1 class="heading">Nuestras <span>Bebidas</span></h1>
       <div class="swiper drink-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide box">
-            <img src="./img/AguaDePiña.jpeg" alt="Agua de piña" />
-            <h3>Agua de piña</h3>
-            <div class="price">S/1.50</div>
-            <p>Endulzado con stevia</p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
-          <div class="swiper-slide box">
-            <img src="./img/BebidaDeNaranja.jpeg" alt="Bebida de naranja" />
-            <h3>Bebida de naranja</h3>
-            <div class="price">S/2.00</div>
-            <p>Endulzado con stevia</p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
-          <div class="swiper-slide box">
-            <img src="./img/JugoDeMaracuya.jpeg" alt="Jugo de maracuyá" />
-            <h3>Jugo de maracuyá</h3>
-            <div class="price">S/2.00</div>
-            <p>Endulzado con stevia</p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
-          <div class="swiper-slide box">
-            <img src="./img/Limonada.jpeg" alt="Limonada" />
-            <h3>Limonada</h3>
-            <div class="price">S/1.00</div>
-            <p>Endulzado con stevia</p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
-          <div class="swiper-slide box">
-            <img src="./img/LimonadaDeFresa.jpeg" alt="Limonada de fresa" />
-            <h3>Limonada de fresa</h3>
-            <div class="price">S/2.00</div>
-            <p>Endulzado con stevia</p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
-          <div class="swiper-slide box">
-            <img
-              src="./img/ZumoFrutosDelBosque.jpeg"
-              alt="Zumo de frutos del bosque"
-            />
-            <h3>Frutos del bosque</h3>
-            <div class="price">S/2.00</div>
-            <p>Endulzado con stevia</p>
-            <a href="#" class="btn">Añadir al carrito</a>
-          </div>
+        <div class="swiper-wrapper" id="drinks-container">
+          <!-- todo el contenido se va a rellenar con js -->
         </div>
       </div>
     </section>
@@ -229,6 +128,6 @@
     </section>
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

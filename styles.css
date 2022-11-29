@@ -6,7 +6,7 @@
   --black: #04030b;
   --light-color: #666;
   --box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.1);
-  --border: .2rem solid rgba(0, 0, 0, 0.1);
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
   --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
   --outline-hover: 0.2rem solid var(--green);
 }
@@ -21,7 +21,7 @@
   text-decoration: none;
   list-style: none;
   text-transform: capitalize;
-  transition: all 0.4s linear;
+  transition: all 0.25s linear;
 }
 
 html {
@@ -123,6 +123,26 @@ section {
 .header .icons div:hover {
   background-color: var(--orange);
   color: #fff;
+}
+
+.header .icons  #btn-cart{
+  position: relative;
+}
+
+.header .icons #btn-cart span{
+  position: absolute;
+  top:10%;
+  left: 55%;
+  background-color: red;
+  width: 12px;
+  height: 15px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color:white;
+  padding: 2px;
+  font-size: 60%;
 }
 
 #btn-bars {
@@ -489,36 +509,21 @@ section {
   border-top: var(--border);
 }
 
-.footer .credit span{
+.footer .credit span {
   color: var(--green);
 }
 
-.footer .credit a{
+.footer .credit a {
   padding: 0.5rem;
-  font-size: 2.0rem;
+  font-size: 2rem;
   background-color: #eee;
   color: var(--black);
 }
 
-.footer .credit a:hover{
+.footer .credit a:hover {
   background-color: var(--black);
   color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* media queries */
 
@@ -582,7 +587,7 @@ section {
     font-size: 2.5rem;
   }
 
-  .footer{
+  .footer {
     text-align: center;
   }
 }
