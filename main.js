@@ -16,7 +16,6 @@ let messageBuy = document.querySelector(".message-buy");
 window.onscroll = () => {
   navbar.classList.remove("active");
   shoppingCart.classList.remove("active");
-  messageBuy.classList.remove('active');
 };
 
 const description = "Endulzado con stevia"; // Descripción común en las bebidas
