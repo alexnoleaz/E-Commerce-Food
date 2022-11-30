@@ -1,29 +1,22 @@
-// Controla los botones de la barra de navegación
-let formSearch = document.querySelector(".form-search");
-document.querySelector("#btn-search").onclick = () => {
-  formSearch.classList.toggle("active");
-  navbar.classList.remove("active");
-  shoppingCart.classList.remove("active");
-};
 
 let navbar = document.querySelector(".navbar");
 document.querySelector("#btn-bars").onclick = () => {
   navbar.classList.toggle("active");
-  formSearch.classList.remove("active");
   shoppingCart.classList.remove("active");
 };
 
 let shoppingCart = document.querySelector(".shopping-cart");
 document.querySelector("#btn-cart").onclick = () => {
   shoppingCart.classList.toggle("active");
-  formSearch.classList.remove("active");
   navbar.classList.remove("active");
 };
 
+let messageBuy = document.querySelector(".message-buy");
+
 window.onscroll = () => {
   navbar.classList.remove("active");
-  formSearch.classList.remove("active");
   shoppingCart.classList.remove("active");
+  messageBuy.classList.remove('active');
 };
 
 const description = "Endulzado con stevia"; // Descripción común en las bebidas
@@ -105,7 +98,7 @@ const products = [
     img: "./img/ZumoFrutosDelBosque.jpeg",
   },
 ];
-const productsInCart = []; // Array que almacena los productos seleccionados
+let productsInCart = []; // Array que almacena los productos seleccionados
 
 // Elementos del DOM
 const burgerContainer = document.querySelector("#burgers-container");
@@ -113,6 +106,10 @@ const drinkContainer = document.querySelector("#drinks-container");
 const cartContainer = document.querySelector(".shopping-cart");
 const spanQuantity = document.querySelector("#quantity");
 let btnsAdd = document.querySelectorAll(".btn-add");
+let btnsDelete = document.querySelectorAll(".btn-delete");
+// let btnPay = document.querySelector("#btn-pay")
+
+// const btnPay = document.querySelector("#btn-pay");
 
 // Función que controla la sección de hamburguesas
 const loadBurgers = () => {
@@ -196,6 +193,16 @@ const loadDrinks = () => {
 };
 loadDrinks();
 
+// Actualiza el contador dependiendo de la acción
+function updatedQuantity() {
+  let quantity = productsInCart.reduce(
+      (count, product) => count + product.quantity,
+      0
+    );
+  
+  spanQuantity.innerText = quantity;
+}
+
 // Función para actualizar botones agregar
 function btnsAddUpdated() {
   btnsAdd = document.querySelectorAll(".btn-add");
@@ -204,10 +211,10 @@ function btnsAddUpdated() {
   });
 }
 
-// Funciones para agregar productos al carrito y actualizar el contador
+// Función para agregar productos al carrito
 function addToCart(e) {
   const idProduct = e.currentTarget.id;
-  const addedProduct = products.find((burger) => burger.id === idProduct);
+  const addedProduct = products.find((product) => product.id === idProduct);
 
   if (productsInCart.some((product) => product.id === idProduct)) {
     const i = productsInCart.findIndex((product) => product.id === idProduct);
@@ -216,28 +223,33 @@ function addToCart(e) {
     addedProduct.quantity = 1;
     productsInCart.push(addedProduct);
   }
+
+  spanQuantity.classList.add("active");
   updatedQuantity();
   loadShoppingCart();
-}
-
-function updatedQuantity() {
-  let quantity = productsInCart.reduce(
-    (count, product) => count + product.quantity,
-    0
-  );
-  spanQuantity.innerText = quantity;
 }
 
 // Función que actualiza el contenido del carrito de compras
 function loadShoppingCart() {
   let totalAmount = 0;
+  let count = 0;
   cartContainer.innerHTML = "";
+
+  if (productsInCart.length <= 0) {
+    spanQuantity.classList.remove("active");
+
+    const h1 = document.createElement("h1");
+    h1.innerText = "Tu carrito está vacío";
+    cartContainer.append(h1);
+
+    return;
+  }
 
   productsInCart.forEach((product) => {
     const div = document.createElement("div");
     div.classList.add("box");
     div.innerHTML = `
-      <i class="fas fa-trash"></i>
+      <i class="fas fa-trash btn-delete" id="${product.id}-delete"></i>
       <img src="${product.img}" alt="${product.title}" />
       <div class="content">
         <h3>${product.title}</h3>
@@ -245,10 +257,22 @@ function loadShoppingCart() {
         <span class="quantity">cant: ${product.quantity}</span>
       </div>
     `;
-
+    count += product.quantity;
     totalAmount += product.price * product.quantity;
     cartContainer.append(div);
   });
+  
+  btnsDeleteUpdated();
+
+  if (count === 0) {
+    spanQuantity.classList.remove("active");
+
+    const h1 = document.createElement("h1");
+    h1.innerText = "Tu carrito está vacío";
+    cartContainer.append(h1);
+
+    return;
+  }
 
   const divTotal = document.createElement("div");
   divTotal.classList.add("total");
@@ -256,8 +280,47 @@ function loadShoppingCart() {
   cartContainer.append(divTotal);
 
   const btnPay = document.createElement("a");
-  btnPay.href = "#";
   btnPay.classList.add("btn");
+  btnPay.id="btn-pay";
   btnPay.innerText = "Pagar ahora";
   cartContainer.append(btnPay);
+
+  finaliseBuy();
+
+}
+loadShoppingCart();
+
+// Función para actualizar botones eliminar
+function btnsDeleteUpdated() {
+  btnsDelete = document.querySelectorAll(".btn-delete");
+  btnsDelete.forEach((btn) => {
+    btn.addEventListener("click", deleteToCart);
+  });
+}
+
+// Función para eliminar productos del carrito
+function deleteToCart(e) {
+  const productsInCartUpdated = [];
+  const idProduct = e.currentTarget.id;
+  
+  for(let i = 0; i< productsInCart.length;i++){
+    let aux = productsInCart[i].id + "-delete";
+    if(aux !== idProduct){
+      productsInCartUpdated.push(productsInCart[i]);
+    }
+  }
+
+  productsInCart = productsInCartUpdated;
+
+  loadShoppingCart();
+  updatedQuantity();
+}
+
+// Función para finalizar compra
+function finaliseBuy(){
+  document.querySelector("#btn-pay").onclick = () => {
+    messageBuy.classList.add("active");
+    shoppingCart.classList.remove("active");
+    navbar.classList.remove('active');
+  }
 }
